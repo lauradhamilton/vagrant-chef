@@ -6,7 +6,7 @@ driver:
     - ["../app", "/minions"]
 
   network:
-    - ["forwarded_port", {guest: 4567, host:4567}]
+    - ["forwarded_port", {guest: 4567, host: 4567}]
 
 provisioner:
   name: chef_solo
