@@ -2,6 +2,9 @@
 driver:
   name: vagrant
 
+  synced_folders:
+    - ["../app", "/minions"]
+
 provisioner:
   name: chef_solo
 
@@ -12,6 +15,3 @@ platforms:
 
 suites:
   - name: wdiy
-
-synced_folders:
-  - ["../app", "/minions"]
