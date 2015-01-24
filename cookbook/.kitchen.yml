@@ -15,3 +15,5 @@ platforms:
 
 suites:
   - name: wdiy
+    run_list:
+      - wdiy
