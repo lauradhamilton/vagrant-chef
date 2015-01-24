@@ -12,3 +12,13 @@ end
 
 # MySQL
 include_recipe "mysql::server"
+include_recipe "database::mysql"
+
+mysql_database 'miniondb' do
+  connection(
+    :host => '127.0.0.1',
+    :username => 'root',
+    :password => node['mysql']['server_root_password']
+  )
+  action :create
+end
