@@ -10,6 +10,8 @@ platforms:
     driver:
       box: chef/ubuntu-14.10
 
-
 suites:
   - name: wdiy
+
+synced_folders:
+  - ["../app", "/minions"]
