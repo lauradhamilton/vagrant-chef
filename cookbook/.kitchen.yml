@@ -5,9 +5,6 @@ driver:
   synced_folders:
     - ["../app", "/minions"]
 
-  network:
-    - ["forwarded_port", {guest: 4567, host: 4567}]
-
 provisioner:
   name: chef_solo
 
@@ -15,6 +12,13 @@ platforms:
   - name: ubuntu14
     driver:
       box: chef/ubuntu-14.10
+      network:
+        - ["forwarded_port", {guest: 4567, host: 4567}]
+  - name: centos66
+    driver:
+      box: chef/centos-66
+      network:
+        - ["forwarded_port", {guest: 5678, host: 5678}]
 
 suites:
   - name: wdiy
