@@ -14,6 +14,12 @@ end
 include_recipe "mysql::server"
 include_recipe "database::mysql"
 
+# Make sure that MySQL is running before creating a database
+service "mysql" do
+  action :start
+  only_if "test -f /etc/init.d/mysql"
+end
+
 mysql_database 'miniondb' do
   connection(
     :host => '127.0.0.1',
