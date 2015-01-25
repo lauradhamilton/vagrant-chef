@@ -1,6 +1,7 @@
-include_recipe "rbenv::default"
-include_recipe "rbenv::ruby_build"
-include_recipe "rbenv::rbenv_vars"
+include_recipe 'rbenv::default'
+include_recipe 'rbenv::ruby_build'
+include_recipe 'rbenv::rbenv_vars'
+include_recipe 'rake'
 
 rbenv_ruby "2.1.1" do
   global true
@@ -20,6 +21,7 @@ service "mysql" do
   only_if "test -f /etc/init.d/mysql"
 end
 
+# Create a database
 mysql_database 'miniondb' do
   connection(
     :host => '127.0.0.1',

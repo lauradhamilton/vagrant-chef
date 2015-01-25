@@ -3,3 +3,4 @@ name    'wdiy'
 
 depends 'rbenv', '1.7.1'
 depends 'database', '~> 2.3.1'
+depends 'rake', '~> 0.1.1'
